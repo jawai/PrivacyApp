@@ -64,7 +64,7 @@ class AccessesController < ApplicationController
   def destroy
     @access.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Access was successfully destroyed.' }
+      format.html { redirect_to accesses_path, notice: 'Access was successfully destroyed.' }
     end
   end
 
