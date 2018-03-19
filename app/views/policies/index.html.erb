@@ -1,0 +1,71 @@
+<% if current_user %>
+  <h1 class="policy text-center">Policies for <%= current_user.hic_name%></h1>
+
+  <div class="policy">
+    <h2 class="policy text-center">Access and Correction Policy and Operating Practices</h2>
+    <div class="policy-body">
+      <h3>1. Policy Statements</h3>
+      <ol>
+        <li>
+          Patients may ask to see or get copies of their medical records.  They can ask us verbally or make a written request.
+        </li>
+        <li>
+          Patients may ask <%= current_user.hic_name %>  to correct their medical records if the information is out-of-date, inaccurate, or incomplete.
+        </li>
+        <li>
+          <%= current_user.hic_name %> must respond to all requests to see, get a copy of, or to correct the medical record within 30 calendar days. <%= current_user.hic_name %> must notify the patient that we require an additional 30 calendar days to respond if:
+          <ol>
+            <p>1.1. Responding within 30 calendar days would interfere with normal clinic functioning because finding or compiling the medical record is very complex; or</p>
+            <p>1.2. More time is needed to confirm whether some of the medical record should be withheld.</p>
+          </ol>
+        </li>
+        <li>
+          <%= current_user.hic_name %> may decide not to make a correction to a medical record if:
+          <ol>
+            <p>1.3 The information was received from another organization and <%= current_user.hic_name %> does not have enough information to know whether it should be corrected;</p>
+            <p>1.4 The correction is frivolous, vexatious, or requested in bad faith;</p>
+            <p>1.5 The medical record is not incorrect or incomplete; or</p>
+            <p>1.6 The information represents a clinical opinion that was made in good faith.</p>
+          </ol>
+        </li>
+        <li>
+          If the patient asks, <%= current_user.hic_name %> must note in the medical record if the patient asked for a correction but <%= current_user.hic_name %> refused to make the correction.
+        </li>
+        <li>
+          <%= current_user.hic_name %> may decide not to release some or all of the medical record if there is a good reason.  The reason must be consistent with PHIPA s52.
+        </li>
+      </ol>
+
+      <h3>2. Operating Practices</h3>
+        <h4>When the Patient asks a Clinician</h4>
+          <p>Step 1. When a Patient asks a clinician to see or get a copy of the medical record, the clinician should show or create a copy the medical record if it is easy to do (e.g., showing the Patient your screen, printing the medical record from the electronic medical record).</p>
+          <p>Step 2. If the clinician cannot show or give a copy of the record to the Patient, the clinician must give the request to <%= current_user.privacy_contact_name %>.</p>
+        <h4>When the Patient asks an administrative staff member or makes a written request</h4>
+          <p>Step 1. The administrative staff member who receives the request must:</p>
+            <ol>
+              <p>2.1. Try to get enough information from the Patient to be able to identify the medical record he or she needs; and</p>
+              <p>2.2. Give the request to <%= current_user.privacy_contact_name %>.</p>
+            </ol>
+          <p>Step 2. Before giving the Patient his or her medical record, <%= current_user.privacy_contact_name %> must:</p>
+            <ol>
+              <p>1.1. Write in Request for Access Log that the request was made;</p>
+              <p>1.2. Verify the identity of the Patient by asking for photo identification or by asking another member of the clinic, if <%= current_user.privacy_contact_name %> does not know the Patient;</p>
+              <p>1.3. Confirm that the person is indeed the substitute decision maker for the Patient, if applicable, by following the Guidelines for Identifying a Substitute Decision Maker;</p>
+              <p>1.4. Identify any location or system (e.g., paper, EMR) where the Patient’s medical record exists;</p>
+              <p>1.5. Confirm with the Patient’s clinicians whether any information in the medical record should not be given to the Patient (see the possible reasons in Policy #6 above);</p>
+              <p>1.6. Tell the Patient how much they will be charged, if any, to give him or her a copy of the medical record; and,</p>
+              <p>1.7. Direct the Patient to contact relevant program office (e.g. eHealth Ontario) to make the Request for Access if the medical record involves PHI contributed by another organization, or involves logs to which the HIC has no access.</p>
+            </ol>
+          <p>Step 4. When responding to the Patient, <%= current_user.privacy_contact_name %> must do one of the following:</p>
+            <ol>
+              <p>1.8. Give a complete copy of the medical record;</p>
+              <p>1.9. Give only some of the medical record if PHI (see the possible reasons in Policy #4 above for not giving all of the information);</p>
+              <p>1.10. Not give any information from the medical record (see the possible reasons in Policy #4 above for not giving all of the information); or</p>
+              <p>1.11. Notify the Patient in writing that <%= current_user.hic_name %> needs another 30 days to respond (see the possible reasons in Policy #3 above for needing more time).</p>
+            </ol>
+          <p>Step 5. If <%= current_user.hic_name %> only releases some information or needs more time, <%= current_user.privacy_contact_name %> must complete the relevant Request for Access Response Template.</p>
+          <p>Step 6. <%= current_user.privacy_contact_name %> must meet with the Patient to explain any abbreviations, terminology, or codes if the Patient asks.</p>
+          <p>Step 7. <%= current_user.privacy_contact_name %> must log the results of the request using Request for Access Log.</p>
+    </div>
+  </div>
+<% end %>

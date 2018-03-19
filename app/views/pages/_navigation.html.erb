@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-xl navbar-dark main-nav">
+        <%= link_to "Privacy", root_path, :class => "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbarLg">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="collapsingNavbarLg">
+        <ul class="navbar-nav">
+            <% if current_user %>
+              <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "nav-link" %></li>
+              <li class="nav-item"><%= link_to "My Policies", policies_index_path, :class => "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Access Requests", accesses_path, :class => "nav-link" %></li>
+              <li class="nav-item"><%= link_to "My Account", edit_user_registration_path, :class => "nav-link" %></li>
+            <% else %>
+              <li class="nav-item"><%= link_to "Login", new_user_session_path, :class => "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Register", new_user_registration_path, :class => "nav-link" %></li>
+              <li class="nav-item"><%= link_to "About Us", pages_about_path, :class => "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Contact Us", pages_contact_path, :class => "nav-link" %></li>
+            <% end %>
+        </ul>
+    </div>
+</nav>
