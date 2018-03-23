@@ -1,98 +1,100 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="form-signin">
+  <h1 class="h3 mb-3 font-weight-normal">Edit <%= resource_name.to_s.humanize %></h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :hic_name, "Organization Name" %><br />
+      <%= f.text_field :hic_name, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :hic_address_one, "Address Line 1" %><br />
+      <%= f.text_field :hic_address_one, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :hic_address_two, "Address Line 2" %><br />
+      <%= f.text_field :hic_address_two, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :hic_city, "City" %><br />
+      <%= f.text_field :hic_city, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :hic_postal_code, "Postal Code" %><br />
+      <%= f.text_field :hic_postal_code, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :hic_country, "Country" %><br />
+      <%= f.text_field :hic_country, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :hic_telephone, "Telephone Number" %><br />
+      <%= f.text_field :hic_telephone, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :hic_fax, "Fax Number" %><br />
+      <%= f.text_field :hic_fax, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :privacy_contact_name, "Privacy Contact Name" %><br />
+      <%= f.text_field :privacy_contact_name, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :privacy_title, "Privacy Contact Title" %><br />
+      <%= f.text_field :privacy_title, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :approver, "Privacy Policy Approver" %><br />
+      <%= f.text_field :approver, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update", class: 'btn btn-lg btn-primary btn-block' %>
+    </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :hic_name, "Organization Name" %><br />
-    <%= f.text_field :hic_name %>
-  </div>
+  <h3>Cancel my account</h3>
 
-  <div class="field">
-    <%= f.label :hic_address_one, "Address Line 1" %><br />
-    <%= f.text_field :hic_address_one %>
-  </div>
+  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-lg btn-danger btn-block' %></p>
 
-  <div class="field">
-    <%= f.label :hic_address_two, "Address Line 2" %><br />
-    <%= f.text_field :hic_address_two %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hic_city, "City" %><br />
-    <%= f.text_field :hic_city %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hic_postal_code, "Postal Code" %><br />
-    <%= f.text_field :hic_postal_code %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hic_country, "Country" %><br />
-    <%= f.text_field :hic_country %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hic_telephone, "Telephone Number" %><br />
-    <%= f.text_field :hic_telephone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hic_fax, "Fax Number" %><br />
-    <%= f.text_field :hic_fax %>
-  </div>
-
-  <div class="field">
-    <%= f.label :privacy_contact_name, "Privacy Contact Name" %><br />
-    <%= f.text_field :privacy_contact_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :privacy_title, "Privacy Contact Title" %><br />
-    <%= f.text_field :privacy_title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :approver, "Privacy Policy Approver" %><br />
-    <%= f.text_field :approver %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+  <%= link_to "Back", :back %>
+</div>

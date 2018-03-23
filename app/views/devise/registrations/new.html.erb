@@ -1,84 +1,110 @@
-<h2>Sign up</h2>
+<div class="form-signin">
+  <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :hic_name, "Organization Name" %><br />
-    <%= f.text_field :hic_name %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="field">
+        <%= f.label :email, class: 'sr-only' %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email address" %>
+      </div>
+      <div class="field">
+        <%= f.label :hic_name, "Organization Name", class: 'sr-only' %><br />
+        <%= f.text_field :hic_name, class: "form-control", placeholder: "Organization Name" %>
+      </div>
+      <div class="field">
+        <%= f.label :hic_address_one, "Address Line 1", class: 'sr-only' %><br />
+        <%= f.text_field :hic_address_one, class: "form-control", placeholder: "Address Line 1" %>
+      </div>
+      <div class="field">
+        <%= f.label :hic_address_two, "Address Line 2", class: 'sr-only' %><br />
+        <%= f.text_field :hic_address_two, class: "form-control", placeholder: "Address Line 2" %>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="field">
+        <%= f.label :hic_city, "City", class: 'sr-only' %><br />
+        <%= f.text_field :hic_city, class: "form-control", placeholder: "City" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :hic_postal_code, "Postal Code", class: 'sr-only' %><br />
+        <%= f.text_field :hic_postal_code, class: "form-control", placeholder: "Postal Code" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :hic_country, "Country", class: 'sr-only' %><br />
+        <%= f.text_field :hic_country, class: "form-control", placeholder: "Country" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :hic_telephone, "Telephone Number", class: 'sr-only' %><br />
+        <%= f.text_field :hic_telephone, class: "form-control", placeholder: "Telephone Number" %>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="field">
+        <%= f.label :hic_fax, "Fax Number", class: 'sr-only' %><br />
+        <%= f.text_field :hic_fax, class: "form-control", placeholder: "Fax Number" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :privacy_contact_name, "Privacy Contact Name", class: 'sr-only' %><br />
+        <%= f.text_field :privacy_contact_name, class: "form-control", placeholder: "Privacy Contact Name" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :privacy_title, "Privacy Contact Title", class: 'sr-only' %><br />
+        <%= f.text_field :privacy_title, class: "form-control", placeholder: "Privacy Contact Title" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :approver, "Privacy Policy Approver", class: 'sr-only' %><br />
+        <%= f.text_field :approver, class: "form-control", placeholder: "Privacy Policy Approver" %>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :hic_address_one, "Address Line 1" %><br />
-    <%= f.text_field :hic_address_one %>
+<div class="container">
+  <div class="row registration-password">
+    <div class="col-sm">
+      <div class="field">
+        <%= f.label :password, class: 'sr-only' %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, class: 'sr-only' %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirm Password" %>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :hic_address_two, "Address Line 2" %><br />
-    <%= f.text_field :hic_address_two %>
+<div class="container">
+  <div class="row registration-password">
+    <div class="col-sm"></div>
+    <div class="col-sm">
+      <div class="actions registration-password">
+        <%= f.submit "Sign up", class: 'btn btn-lg btn-primary btn-block' %>
+      </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %></div>
+    <div class="col-sm"></div>
   </div>
-
-  <div class="field">
-    <%= f.label :hic_city, "City" %><br />
-    <%= f.text_field :hic_city %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hic_postal_code, "Postal Code" %><br />
-    <%= f.text_field :hic_postal_code %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hic_country, "Country" %><br />
-    <%= f.text_field :hic_country %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hic_telephone, "Telephone Number" %><br />
-    <%= f.text_field :hic_telephone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hic_fax, "Fax Number" %><br />
-    <%= f.text_field :hic_fax %>
-  </div>
-
-  <div class="field">
-    <%= f.label :privacy_contact_name, "Privacy Contact Name" %><br />
-    <%= f.text_field :privacy_contact_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :privacy_title, "Privacy Contact Title" %><br />
-    <%= f.text_field :privacy_title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :approver, "Privacy Policy Approver" %><br />
-    <%= f.text_field :approver %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
