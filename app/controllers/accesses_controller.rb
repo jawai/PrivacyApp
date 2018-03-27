@@ -11,6 +11,9 @@ class AccessesController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    #if current_user != @access.user
+    #  redirect_to(root_path)
+    #end
   end
 
   # GET /posts/new
@@ -71,7 +74,8 @@ class AccessesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_access
-      @access = Access.find(params[:id])
+      @access = current_user.accesses.find(params[:id])
+      #@access = Access.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
