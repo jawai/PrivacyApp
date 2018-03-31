@@ -1,6 +1,6 @@
 <% if current_user %>
 
-<h1 class="policy text-center">Policies and Operating Practices for <%= current_user.hic_name%></h1>
+<h2 class="policy text-center">Policies and Operating Practices for <%= current_user.hic_name%></h2>
 
 
 <!-- MOBILE -->
@@ -225,7 +225,7 @@
       </div>
     </div>
 
-    <div class="col-md not-mobile">
+    <div class="col-md">
       <div class="list-group">
         <a class="list-group-item list-group-item-primary" data-toggle="collapse" href="#accessThree">Access and Correction Operating Practices</a>
         <div class="collapse" id="accessThree">
@@ -278,8 +278,8 @@
   <div class="row">
     <div class="col-md">
       <div class="list-group">
-        <a class="list-group-item list-group-item-secondary" data-toggle="collapse" href="#lockbox">Lockbox Policy</a>
-        <div class="collapse" id="lockbox">
+        <a class="list-group-item list-group-item-secondary" data-toggle="collapse" href="#lockbox-policy">Lockbox Operating Practices</a>
+        <div class="collapse" id="lockbox-policy">
           <div class="card card-body">
             <div class="policy">
               <div class="policy-body">
@@ -321,7 +321,7 @@
       </div>
     </div>
 
-    <div class="col-md not-mobile">
+    <div class="col-md">
       <div class="list-group">
         <a class="list-group-item list-group-item-secondary" data-toggle="collapse" href="#lockboxop">Lockbox Operating Practices</a>
         <div class="collapse" id="lockboxop">
@@ -367,4 +367,6 @@
 
   </div>
 </div>
+
+<p></p>
 <% end %>
