@@ -1,5 +1,25 @@
 @import "bootstrap";
 
+body{
+//GLOBAL STYLES
+  @media only screen and (max-width: 770px){
+      //MOBILE ONLY STYLES
+      .mobile {
+        display: none;
+        visibility: hidden;
+       }
+  }
+
+  @media only screen and (min-width:771px){
+      //NOT MOBILE ONLY STYLES add "and (max-width:1040px)"" if wanting for tablet granularity
+      .not-mobile {
+        display: none;
+        visibility: hidden;
+       }
+  }
+}
+
+
 .main-nav {
   background-color: #333;
 }
